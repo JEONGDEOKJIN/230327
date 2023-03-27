@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .swiper-wrap {
+            width: 500px;
+            /* ⭐⭐⭐⭐⭐  */
+            height: max-content;
+            /* border: 1px solid; */
+            position: relative;
+            margin: auto;
+
+            background-color: aquamarine;
+        }
+
+
+        .swiper {
+            width: 500px;
+            height: 500px;
+            position: relative;
+
+            /* 중앙으로 오도록⭐⭐⭐  */
+            margin: auto;
+            
+            /* border: 1px solid; */
+
+            /* 삐져나간 자식들 안 보이게 ⭐⭐⭐  */
+            overflow: hidden;
+
+            background-color: antiquewhite;
+        }
+
+
+        .swiper-content {
+            width: max-content;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+
+            /* 초기화 */
+            margin: 0;
+            padding: 0;
+
+            /* 움직이는 모션 */
+            transition: 1s;
+
+            display: flex;
+            
+            
+            /* 구슬 앞에것 없애기  */
+            list-style: none;
+
+            /* background-color: gainsboro; */
+        }
+
+
+        .swiper-item {
+            width: 500px;
+            height: 100%;
+            border: 1px solid;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* 이벤트 제거 하는 것 : 클릭 같은게 발생하지 않게 제거 */
+            pointer-events: none;
+        }
+
+        
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            /* ⭐⭐ 부모보다 앞으로 / position 속성이 있을 때, 이런게 문제가 됨.  */
+            /* z-index: 1; */
+
+            width: 50px;
+            border: 1px solid;
+        }
+
+        .prev {
+            left: 5px;
+        }
+
+        .next {
+            right: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- swiper 라이브러리를 사용하면, 빠르고, 편하긴 함. 
+    다만, '수정' 이 어려움 
+    나만의 라이브러리 ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+    😥 음 더 작아가 안 나오는데? -->
+
+
+    <div class="swiper-wrap"> 
+
+        <div class="swiper"> 
+            <ul class="swiper-content">
+    
+                <li class="swiper-item">1</li>
+                <li class="swiper-item">2</li>
+                <li class="swiper-item">3</li>
+                <li class="swiper-item">4</li>
+    
+            </ul>
+    
+            <span class="prev"> 이전 </span>
+            <span class="next"> 다음 </span>
+    
+    
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script src="./index.js"></script>
+
+</html>

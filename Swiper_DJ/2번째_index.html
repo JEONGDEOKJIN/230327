@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .swiper-wrap {
+            background-color: wheat;
+            width: 500px;
+
+            /* ❓❓❓ 이게 뭐지 */
+            height: max-content;
+            position: relative;
+
+            margin: auto;
+        }
+
+        .swiper {
+
+            width: 500px;
+            height: 500px;
+            position: relative;
+
+            /* ⭐⭐⭐ 가운데로 오게 */
+            margin: auto;
+
+            /* ⭐⭐⭐ 자식들이 넘어가면 사라지게 */
+            /* overflow: hidden; */
+            background-color: seagreen;
+        }
+
+
+        .swiper-content {
+
+            width: max-content;
+            position: absolute;
+
+            background-color: yellow;
+
+            top: 0;
+            left: 500;
+
+            height: 100%;
+            margin: 0;
+            padding: 0;
+
+            /* 아직 모르겠음.  */
+            /* transition: 1s; */
+
+            display: flex;
+
+            /* 점 없애기 */
+            list-style: none;
+        }
+
+        .swiper-item {
+            width: 500px;
+            height: 100%;
+
+            border: 1px solid;
+            box-sizing: border-box;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: indianred;
+
+            /* 이벤트 제거 하는 것 : 클릭 같은게 발생하지 않게 제거 */
+            pointer-events: none;
+
+        }
+
+        .prev, .next {
+
+            top: 50%;
+            width: 50px;
+            border: 1px solid;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <button class="prev">
+        이전
+    </button>
+
+    <button class="next">
+        다음
+    </button>
+
+    <div class="swiper-wrap">
+
+        <div class="swiper">
+
+            <ul class="swiper-content">
+
+                <li class="swiper-item"> 5 </li>
+                <li class="swiper-item"> 1 </li>
+                <li class="swiper-item"> 2 </li>
+                <li class="swiper-item"> 3 </li>
+                <li class="swiper-item"> 4 </li>
+                <li class="swiper-item"> 5 </li>
+                <li class="swiper-item"> 1 </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    
+
+</body>
+
+<script src="./2번째_index.js"></script>
+
+</html>
