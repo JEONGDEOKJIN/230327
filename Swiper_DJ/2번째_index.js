@@ -28,10 +28,12 @@
     let index = 0;
 
 
-    // 
+    // '이전', '다음' 해당하는 buttom 태그를 변수에 담기
         let _prev = document.querySelector('.prev')
         
         let _next = document.querySelector('.next')
+
+
 
 
 // 🔷 마우스 눌렀을 때 > x 좌표 가져오기 
@@ -74,6 +76,7 @@
 
 // 🔷 버튼으로 > swipe 움직이게 하기
 _prev.addEventListener('click' , function(){
+    console.log("버튼 왼쪽")
     if(_index > 0) 
         _index --; 
         swipeMove()
@@ -81,6 +84,7 @@ _prev.addEventListener('click' , function(){
 })
 
 _next.addEventListener('click' , function(){
+    console.log("버튼 오른쪽")
     if(_index < (length-1))
         _index ++; 
         swipeMove();
@@ -93,7 +97,7 @@ _next.addEventListener('click' , function(){
     // swipe content 자체를 왼쪽으로 이동? 
 
     function swipeMove() {
-        _swiperContentUl.style.left =  (500 * _index) + "px";
+        _swiperContentUl.style.left =  -(500 * _index) + "px";
 
         let _ul = document.querySelector('.swiper-content')
         console.log(_ul.length);
