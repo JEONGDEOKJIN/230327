@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Swipe Example</title>
+  <style>
+    #container {
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    #slider {
+      width: 1600px;
+      height: 300px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    #slider img {
+      float: left;
+      width: 400px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="slider">
+      <img src="image1.jpg">
+      <img src="image2.jpg">
+      <img src="image3.jpg">
+      <img src="image4.jpg">
+    </div>
+  </div>
+  <script>
+    var slider = document.getElementById('slider');
+    var container = document.getElementById('container');
+    var start = 0;
+    var end = 0;
+    var isDragging = false;
+
+    slider.addEventListener('touchstart', function(e) {
+      isDragging = true;
+      start = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchmove', function(e) {
+      if (isDragging) {
+        end = e.touches[0].clientX;
+        var distance = end - start;
+        slider.style.left = -distance + 'px';
+      }
+    });
+
+    slider.addEventListener('touchend', function(e) {
+      isDragging = false;
+      if (end - start > 50) {
+        slider.style.left = '0px';
+      } else if (end - start < -50) {
+        slider.style.left = '-1200px';
+      }
+    });
+  </script>
+</body>
+</html>
